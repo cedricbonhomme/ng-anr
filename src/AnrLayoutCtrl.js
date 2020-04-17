@@ -2939,7 +2939,6 @@
 		    };
 
         $scope.importFromMosp = function () {
-          $scope.dialog_mode = 'mosp';
           $scope.languages = ConfigService.getLanguages();
           $scope.language = $scope.getAnrLanguage();
 
@@ -2968,6 +2967,8 @@
               // filter on the name and and the theme
               return $scope.mosp_assets.filter(r => r['name'].toLowerCase().includes(searchText.toLowerCase()));
           };
+
+          $scope.dialog_mode = 'mosp';
 
           $scope.import = function() {
               var asset = $scope.asset.json_object;
